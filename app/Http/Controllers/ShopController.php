@@ -45,9 +45,11 @@ class ShopController extends Controller
         $shop->businessCity = $request->businessCity;
         $shop->businessState = $request->businessState;
         $shop->businessWhatsapp = $request->businessWhatsapp;
-        $shop->businessFacebook= $request->businessFacebook;
+        $shop->businessFacebook = $request->businessFacebook;
         $shop->businessInstagram = $request->businessInstagram;
         $shop->save();
+
+        return view("store", ["storeName" => $shop->businessName, "storeId" => $shop->id]);
     }
 
     /**

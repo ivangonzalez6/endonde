@@ -52,7 +52,10 @@
                         <a class="nav-link" style="color:white" href="#">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color:#f97f2c" href="#">Ingresar</a>
+                        <a class="nav-link" style="color:#f97f2c" href="{{route('user.login')}}">Ingresar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#f97f2c" href="{{route('user.register')}}">Registrarse</a>
                     </li>
                 </ul>
             </div>
