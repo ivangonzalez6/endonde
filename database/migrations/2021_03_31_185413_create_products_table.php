@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             ->onDelete('cascade');
             $table->string('productName');
             $table->string('productPrice');
-            $table->string('productImage');
+            $table->string('productImage')->nullable();
             $table->text('productDescription');
         });
     }

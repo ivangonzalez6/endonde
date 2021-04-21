@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -15,6 +16,11 @@ class ShopController extends Controller
     public function index()
     {
         //
+    }
+
+    public function add()
+    {
+        return view('create');
     }
 
     /**
@@ -50,6 +56,22 @@ class ShopController extends Controller
         $shop->save();
 
         return view("store", ["storeName" => $shop->businessName, "storeId" => $shop->id]);
+    }
+
+    public function product(Request $request)
+    {
+
+        //Shop::create($request->all());
+        $product = new Product;
+        $product->shop_id = $request->shop_id;
+        $product->productName = $request->productName;
+        $product->productDescription = $request->productDescription;
+        $product->productPrice = $request->productPrice;
+        $product->productImage = $request->productImage;
+
+        $product->save();
+
+        return view("confirmation");
     }
 
     /**

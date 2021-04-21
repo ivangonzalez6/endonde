@@ -33,7 +33,7 @@
         <div class="container col-10">
             <div class="col-lg-4 mx-auto ">
 
-                <button type="submit" class="btn1 mt-3 mb-4">Agregar producto</button>
+                <a class="btn1 btn mt-3 mb-4" href="{{route('shop.add', ['id' => $storeId])}}">Agregar producto</a>
 
             </div>
 

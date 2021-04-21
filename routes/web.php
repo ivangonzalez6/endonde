@@ -26,12 +26,18 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/create', function () {
+    return view('create');
+});
+
 
 Route::get('/shop', function () {
     return view('shop');
 });
 
+Route::post('/shop/product', [ShopController::class, 'product'])->name('shop.product');
 Route::post('/shop/store', [ShopController::class, 'store'])->name('shop.store');
+Route::get('/shop/add', [ShopController::class, 'add'])->name('shop.add');
 Route::get('/user/login', [UserController::class, 'login'])->name('user.login');
 Route::get('/user/register', [UserController::class, 'create'])->name('user.register');
 Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
